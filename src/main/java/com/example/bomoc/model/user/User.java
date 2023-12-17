@@ -1,6 +1,9 @@
 package com.example.bomoc.model.user;
 
 import com.example.bomoc.model.user.asset.Asset;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,16 +21,20 @@ import java.util.*;
 public class User implements Serializable {
 
 	@OneToOne(mappedBy = "user")
+	@JsonIgnore
 	private Account account;
 
 	@OneToOne(mappedBy = "user")
+	@JsonIgnore
 	private Name name;
 
 	@ManyToOne(cascade = CascadeType.ALL)
+	@JsonIgnore
 	@JoinColumn(name = "AddressID", referencedColumnName = "ID")
 	private Address address;
 
 	@OneToMany(mappedBy = "user")
+	@JsonManagedReference
 	List<Asset> assets;
 
 	@Id

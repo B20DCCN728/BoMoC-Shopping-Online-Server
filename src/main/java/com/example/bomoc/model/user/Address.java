@@ -22,10 +22,15 @@ public class Address {
 	@Column(name = "ID")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int ID;
+	@Column(name = "PublisherID")
 	private int publisherID;
+	@Column(name = "HouseNumber")
 	private String houseNumber;
+	@Column(name = "Street")
 	private String street;
+	@Column(name = "District")
 	private String district;
+	@Column(name = "City")
 	private String city;
 
 }

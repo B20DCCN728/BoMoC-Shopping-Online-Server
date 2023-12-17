@@ -2,15 +2,24 @@ package com.example.bomoc.model.user.asset;
 
 import com.example.bomoc.model.Payment;
 import com.example.bomoc.model.user.User;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.*;
 
 @Entity
 @Table(name = "asset")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Asset {
 
 	@ManyToOne
+	@JsonBackReference
 	@JoinColumn(name = "UserID", referencedColumnName = "ID")
 	User user;
 

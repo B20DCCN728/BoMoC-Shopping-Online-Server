@@ -14,12 +14,16 @@ public class Name {
 
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "UserID", referencedColumnName = "ID")
-	User user;
+	private User user;
 
 	@Id
+	@Column(name = "ID")
 	private int ID;
+	@Column(name = "FirstName")
 	private String firstName;
+	@Column(name = "MiddleName")
 	private String middleName;
+	@Column(name = "LastName")
 	private String lastName;
 
 }
