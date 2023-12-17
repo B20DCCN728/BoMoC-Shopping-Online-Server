@@ -1,6 +1,8 @@
 package com.example.bomoc.model.user;
 
 import com.example.bomoc.model.Publisher;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,14 +18,18 @@ import java.util.*;
 public class Address {
 
 	@OneToMany(mappedBy = "address")
-	List<User> users;
+	@JsonBackReference
+	private List<User> users;
+
+	@OneToOne(cascade = CascadeType.ALL)
+	@JsonManagedReference
+	@JoinColumn(name = "PublisherID", referencedColumnName = "ID")
+	private Publisher publisher;
 
 	@Id
 	@Column(name = "ID")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int ID;
-	@Column(name = "PublisherID")
-	private int publisherID;
 	@Column(name = "HouseNumber")
 	private String houseNumber;
 	@Column(name = "Street")

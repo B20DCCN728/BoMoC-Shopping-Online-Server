@@ -21,7 +21,7 @@ public class Asset {
 	@ManyToOne
 	@JsonBackReference
 	@JoinColumn(name = "UserID", referencedColumnName = "ID")
-	User user;
+	private User user;
 
 //	List<Payment> payments;
 

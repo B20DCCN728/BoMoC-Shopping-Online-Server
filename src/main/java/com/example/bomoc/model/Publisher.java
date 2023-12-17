@@ -1,6 +1,7 @@
 package com.example.bomoc.model;
 
 import com.example.bomoc.model.user.Address;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,7 +17,10 @@ import java.util.*;
 public class Publisher {
 
 //	Collection<Book> books;
-//	Address address;
+	@OneToOne(mappedBy = "publisher")
+	@JsonBackReference
+	private Address address;
+
 	@Id
 	@Column(name = "ID")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

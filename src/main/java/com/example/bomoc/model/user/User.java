@@ -21,21 +21,21 @@ import java.util.*;
 public class User implements Serializable {
 
 	@OneToOne(mappedBy = "user")
-	@JsonIgnore
+	@JsonManagedReference
 	private Account account;
 
 	@OneToOne(mappedBy = "user")
-	@JsonIgnore
+	@JsonManagedReference
 	private Name name;
 
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JsonIgnore
+	@JsonManagedReference
 	@JoinColumn(name = "AddressID", referencedColumnName = "ID")
 	private Address address;
 
 	@OneToMany(mappedBy = "user")
 	@JsonManagedReference
-	List<Asset> assets;
+	private List<Asset> assets;
 
 	@Id
 	@Column(name = "ID")
