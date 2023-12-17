@@ -17,8 +17,11 @@ public class Account {
 	User user;
 
 	@Id
+	@Column(name = "ID")
 	private int ID;
+	@Column(name = "username")
 	private String username;
+	@Column(name = "password")
 	private String password;
 
 }

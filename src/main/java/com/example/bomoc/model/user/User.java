@@ -17,27 +17,32 @@ import java.util.*;
 @Data
 public class User implements Serializable {
 
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "UserID", referencedColumnName = "ID")
+	@OneToOne(mappedBy = "user")
 	private Account account;
 
 	@OneToOne(mappedBy = "user")
 	private Name name;
 
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "UserID", referencedColumnName = "ID")
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "AddressID", referencedColumnName = "ID")
 	private Address address;
 
 	@OneToMany(mappedBy = "user")
 	List<Asset> assets;
 
 	@Id
+	@Column(name = "ID")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int ID;
+	@Column(name = "Email", unique = true)
 	private String email;
+	@Column(name = "PhoneNumber", unique = true)
 	private String phoneNumber;
+	@Column(name = "DateOfBirth")
 	private LocalDateTime dateOfBirth;
-	private boolean isAdmin;
+	@Column(name = "IsAdmin")
+	private int isAdmin;
+	@Column(name = "Description")
 	private String description;
 
 }

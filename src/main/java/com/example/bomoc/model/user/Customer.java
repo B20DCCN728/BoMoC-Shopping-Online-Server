@@ -9,6 +9,6 @@ public class Customer extends User {
 	List<FeedBack> feedBack;
 	List<Cart> cart;
 	private int loyaltyPoints;
-	private boolean isVIP;
+	private int isVIP;
 
 }

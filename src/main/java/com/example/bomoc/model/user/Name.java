@@ -12,7 +12,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Name {
 
-	@OneToOne(mappedBy = "name")
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "UserID", referencedColumnName = "ID")
 	User user;
 
 	@Id

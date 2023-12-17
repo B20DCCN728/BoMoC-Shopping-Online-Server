@@ -18,10 +18,15 @@ public class Asset {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID")
 	private int ID;
+	@Column(name = "Symbol")
 	private String symbol;
+	@Column(name = "Balance")
 	private double balance;
+	@Column(name = "Note")
 	private String note;
+	@Column(name = "AssetType")
 	private String assetType;
 
 }
