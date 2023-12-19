@@ -1,4 +1,7 @@
-package com.example.bomoc.model;
+package com.example.bomoc.model.order;
+
+import com.example.bomoc.model.order.payment.Payment;
+import com.example.bomoc.model.order.shipment.Shipment;
 
 import java.time.LocalDateTime;
 

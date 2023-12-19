@@ -1,4 +1,6 @@
-package com.example.bomoc.model;
+package com.example.bomoc.model.product.book;
+
+import com.example.bomoc.model.product.book.Book;
 
 import java.util.*;
 

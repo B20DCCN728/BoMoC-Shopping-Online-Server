@@ -1,5 +1,6 @@
-package com.example.bomoc.model;
+package com.example.bomoc.model.order.payment;
 
+import com.example.bomoc.model.order.Order;
 import com.example.bomoc.model.user.asset.Asset;
 
 import java.time.LocalDateTime;

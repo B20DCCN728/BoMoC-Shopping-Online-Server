@@ -1,10 +1,6 @@
 package com.example.bomoc.model.user;
 
-import com.example.bomoc.model.Cart;
-import com.example.bomoc.model.FeedBack;
 import jakarta.persistence.Column;
-
-import java.util.*;
 
 public class Customer extends User {
 //	private List<FeedBack> feedBack;

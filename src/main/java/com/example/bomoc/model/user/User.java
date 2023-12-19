@@ -22,11 +22,11 @@ public class User implements Serializable {
 
 	@OneToOne(mappedBy = "user")
 	@JsonManagedReference
-	private Account account;
+	private Account account = new Account();
 
 	@OneToOne(mappedBy = "user")
 	@JsonManagedReference
-	private Name name;
+	private Name name = new Name();
 
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JsonManagedReference

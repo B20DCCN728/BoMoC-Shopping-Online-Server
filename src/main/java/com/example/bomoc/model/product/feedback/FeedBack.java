@@ -1,5 +1,6 @@
-package com.example.bomoc.model;
+package com.example.bomoc.model.product.feedback;
 
+import com.example.bomoc.model.product.Product;
 import com.example.bomoc.model.user.Customer;
 
 public class FeedBack {

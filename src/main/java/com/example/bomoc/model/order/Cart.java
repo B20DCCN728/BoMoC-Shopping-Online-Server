@@ -1,4 +1,4 @@
-package com.example.bomoc.model;
+package com.example.bomoc.model.order;
 
 import com.example.bomoc.model.user.Customer;
 

@@ -4,13 +4,13 @@ import com.example.bomoc.model.user.User;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface UserService {
 
     List<User> getAllUsers();
 
-    ResponseEntity<User> getUserById(int id);
+    Optional<User> getUserById(int id);
 
-    ResponseEntity<User> createUser(User user);
-
+    User createUser(User user);
 }

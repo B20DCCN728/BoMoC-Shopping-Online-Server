@@ -1,5 +1,6 @@
-package com.example.bomoc.model;
+package com.example.bomoc.model.product.book;
 
+import com.example.bomoc.model.product.Product;
 import com.example.bomoc.model.user.Address;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
@@ -16,7 +17,10 @@ import java.util.*;
 @AllArgsConstructor
 public class Publisher {
 
-//	Collection<Book> books;
+	@JsonBackReference
+	@OneToMany(mappedBy = "publisher")
+	private List<Book> books;
+
 	@OneToOne(mappedBy = "publisher")
 	@JsonBackReference
 	private Address address;

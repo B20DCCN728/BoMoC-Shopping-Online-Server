@@ -1,4 +1,4 @@
-package com.example.bomoc.model;
+package com.example.bomoc.model.product.feedback;
 
 import java.time.LocalDateTime;
 

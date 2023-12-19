@@ -21,13 +21,14 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public ResponseEntity<User> getUserById(int id) {
-        return null;
+    public Optional<User> getUserById(int id) {
+        Optional<User> user = userRepository.findById(id);
+        return user;
     }
 
     @Override
-    public ResponseEntity<User> createUser(User user) {
-        return null;
+    public User createUser(User user) {
+        return userRepository.save(user);
     }
 
 }

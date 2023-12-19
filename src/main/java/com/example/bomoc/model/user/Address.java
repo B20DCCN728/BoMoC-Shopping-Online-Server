@@ -1,6 +1,6 @@
 package com.example.bomoc.model.user;
 
-import com.example.bomoc.model.Publisher;
+import com.example.bomoc.model.product.book.Publisher;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;

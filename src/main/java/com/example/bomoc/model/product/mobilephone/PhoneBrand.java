@@ -1,4 +1,6 @@
-package com.example.bomoc.model;
+package com.example.bomoc.model.product.mobilephone;
+
+import com.example.bomoc.model.product.mobilephone.MobilePhone;
 
 import java.time.LocalDateTime;
 import java.util.*;
