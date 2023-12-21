@@ -27,8 +27,17 @@ import java.util.*;
 @DiscriminatorValue(value="P")
 public class Product {
 
-//	private List<FeedBack> feedBack;
-//	private List<Item> items;
+	@OneToMany(
+			mappedBy = "product",
+			cascade = CascadeType.ALL
+	)
+	private List<FeedBack> feedBack;
+
+	@OneToMany(
+			mappedBy = "product",
+			cascade = CascadeType.ALL
+	)
+	private List<Item> items;
 
 	@JsonManagedReference
 	@OneToMany(

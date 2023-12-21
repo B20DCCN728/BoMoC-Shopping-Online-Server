@@ -15,8 +15,17 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class Shipment {
 
-	@OneToOne()
-	Order order;
+	@OneToOne(
+			fetch = FetchType.LAZY,
+			optional = false,
+			cascade = CascadeType.ALL,
+			targetEntity = Order.class
+	)
+	@JoinColumn(
+			name = "OrderID",
+			referencedColumnName = "ID"
+	)
+	private Order order;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

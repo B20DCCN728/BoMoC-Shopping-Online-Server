@@ -1,11 +1,14 @@
 package com.example.bomoc.model.user.asset;
 
+import com.example.bomoc.model.order.payment.Payment;
 import com.example.bomoc.model.user.User;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Entity
 @Table(name = "asset")
@@ -19,7 +22,8 @@ public class Asset {
 	@JoinColumn(name = "UserID", referencedColumnName = "ID")
 	private User user;
 
-//	List<Payment> payments;
+	@OneToMany(mappedBy = "asset", cascade = CascadeType.ALL)
+	private List<Payment> payments;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

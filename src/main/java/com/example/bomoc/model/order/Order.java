@@ -17,13 +17,13 @@ import java.time.LocalDateTime;
 public class Order {
 
 	@OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
-	Shipment shipment;
+	private Shipment shipment;
 
 	@OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
-	Payment payment;
+	private Payment payment;
 
 	@OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
-	Cart cart;
+	private Cart cart;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
