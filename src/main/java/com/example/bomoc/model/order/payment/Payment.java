@@ -14,6 +14,14 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Inheritance(
+		strategy = InheritanceType.SINGLE_TABLE
+)
+@DiscriminatorColumn(
+		name = "Discriminator",
+		discriminatorType = DiscriminatorType.STRING
+)
+@DiscriminatorValue(value = "Payment")
 public class Payment {
 
 	@ManyToOne(
@@ -22,7 +30,10 @@ public class Payment {
 			cascade = CascadeType.ALL,
 			targetEntity = Asset.class
 	)
-	@JoinColumn(name = "AssetID")
+	@JoinColumn(
+			name = "AssetID",
+			referencedColumnName = "ID"
+	)
 	private Asset asset;
 
 	@OneToOne(
@@ -31,7 +42,10 @@ public class Payment {
 			cascade = CascadeType.ALL,
 			targetEntity = Order.class
 	)
-	@JoinColumn(name = "OrderID")
+	@JoinColumn(
+			name = "OrderID",
+			referencedColumnName = "ID"
+	)
 	private Order order;
 
 	@Id
