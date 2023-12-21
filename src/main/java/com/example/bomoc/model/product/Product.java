@@ -17,10 +17,12 @@ import java.util.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@Inheritance(
+		strategy = InheritanceType.SINGLE_TABLE
+)
 @DiscriminatorColumn(
-		name="discriminator",
-		discriminatorType=DiscriminatorType.STRING
+		name = "discriminator",
+		discriminatorType = DiscriminatorType.STRING
 )
 @DiscriminatorValue(value="P")
 public class Product {
@@ -29,7 +31,10 @@ public class Product {
 //	private List<Item> items;
 
 	@JsonManagedReference
-	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+	@OneToMany(
+			mappedBy = "product",
+			cascade = CascadeType.ALL
+	)
 	private List <Image> images;
 
 	@Id
