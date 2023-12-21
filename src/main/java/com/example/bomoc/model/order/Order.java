@@ -16,12 +16,15 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class Order {
 
+	@OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
 	Shipment shipment;
 
+	@OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
 	Payment payment;
 
+	@OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
 	Cart cart;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
