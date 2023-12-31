@@ -17,7 +17,13 @@ import java.util.*;
 @DiscriminatorValue("B")
 public class Book extends Product {
 
-//	List<BookCategory> bookCategories;
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(
+			name = "Product_Bookcategory",
+			joinColumns = @JoinColumn(name = "ProductID"),
+			inverseJoinColumns = @JoinColumn(name = "BookCategoryID")
+	)
+	List<BookCategory> bookCategories;
 
 	@JsonManagedReference
 	@ManyToOne(cascade = CascadeType.ALL)

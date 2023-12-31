@@ -25,7 +25,7 @@ public class Rating {
 			name = "FeedBackID",
 			referencedColumnName = "ID"
 	)
-	FeedBack feedBack;
+	private FeedBack feedBack;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

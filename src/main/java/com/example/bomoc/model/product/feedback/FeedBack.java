@@ -15,10 +15,10 @@ import lombok.NoArgsConstructor;
 public class FeedBack {
 
 	@OneToOne(mappedBy = "feedBack", cascade = CascadeType.ALL)
-	Rating rating;
+	private Rating rating;
 
 	@OneToOne(mappedBy = "feedBack", cascade = CascadeType.ALL)
-	Comment comment;
+	private Comment comment;
 
 	@ManyToOne(
 			fetch = FetchType.LAZY,
@@ -30,7 +30,7 @@ public class FeedBack {
 			name = "UserID",
 			referencedColumnName = "ID"
 	)
-	Customer customer;
+	private Customer customer;
 
 	@ManyToOne(
 			fetch = FetchType.LAZY,
@@ -42,7 +42,7 @@ public class FeedBack {
 			name = "ProductID",
 			referencedColumnName = "ID"
 	)
-	Product product;
+	private Product product;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

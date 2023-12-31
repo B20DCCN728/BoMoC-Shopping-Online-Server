@@ -31,7 +31,7 @@ public class MobilePhone extends Product {
 	@JoinTable(
 			name = "Product_Phonecategory",
 			joinColumns = @JoinColumn(name = "ProductID"),
-			inverseJoinColumns = @JoinColumn(name = "PhoneCategory ID")
+			inverseJoinColumns = @JoinColumn(name = "PhoneCategoryID")
 	)
 	private List<PhoneCategory> phoneCategories;
 
