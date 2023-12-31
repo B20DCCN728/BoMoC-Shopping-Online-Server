@@ -8,11 +8,11 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-@EqualsAndHashCode(callSuper = true)
+
 @Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 @DiscriminatorValue(value = "Cash")
 public class PayCash extends Payment {
+    public PayCash() {
+        super();
+    }
 }

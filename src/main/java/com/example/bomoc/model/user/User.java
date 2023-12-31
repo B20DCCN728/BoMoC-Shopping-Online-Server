@@ -18,6 +18,13 @@ import java.util.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Inheritance(
+		strategy = InheritanceType.SINGLE_TABLE
+)
+@DiscriminatorColumn(
+		name = "Discriminator",
+		discriminatorType = DiscriminatorType.STRING
+)
 public class User implements Serializable {
 
 	@OneToOne(mappedBy = "user")

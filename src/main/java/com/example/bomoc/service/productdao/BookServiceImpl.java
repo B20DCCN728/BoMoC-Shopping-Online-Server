@@ -1,6 +1,5 @@
 package com.example.bomoc.service.productdao;
 
-import com.example.bomoc.model.product.Product;
 import com.example.bomoc.model.product.book.Book;
 import com.example.bomoc.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class BookImpl implements BookService {
+public class BookServiceImpl implements BookService {
 
     @Autowired
     private BookRepository bookRepository;

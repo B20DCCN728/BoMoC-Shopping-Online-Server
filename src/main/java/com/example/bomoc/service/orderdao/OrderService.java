@@ -1,4 +1,4 @@
 package com.example.bomoc.service.orderdao;
 
-public interface OrderDAO {
+public interface OrderService {
 }

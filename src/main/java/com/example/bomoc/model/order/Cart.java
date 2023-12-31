@@ -25,7 +25,16 @@ public class Cart {
 	)
 	private Order order;
 
-	@OneToOne(mappedBy = "cart")
+	@ManyToOne(
+			fetch = FetchType.LAZY,
+			optional = false,
+			cascade = CascadeType.ALL,
+			targetEntity = Customer.class
+	)
+	@JoinColumn(
+			name = "UserID",
+			referencedColumnName = "ID"
+	)
 	private Customer customer;
 
 	@OneToOne(
